@@ -219,6 +219,3 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# Raw dataset kept out of the repo (size/licensing to be confirmed)
-data/raw/*
-!data/raw/.gitkeep
