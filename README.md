@@ -65,7 +65,8 @@ and `figures/`, produced by `notebooks/02_results.ipynb`.
 ├── figures/             Report figures (PNG)
 ├── notebooks/
 │   ├── 01_explore_data.ipynb   Data loading, split, default models, tuning
-│   └── 02_results.ipynb        Sensor selection, test results, extrapolation, figures
+│   ├── 02_results.ipynb        Sensor selection, test results, extrapolation, figures
+│   └── 03_performance.ipynb    Profiling, memory, scalability, stability, noise, repeatability
 ├── results/             CSV results tables
 ├── src/degradation/     Source code (see docs/ for full documentation)
 ├── tests/               pytest tests
@@ -89,7 +90,7 @@ python -m pip install -r requirements.txt
 | Run the tests | `python -m pytest -v` |
 | Regenerate the test report | `python -m pytest --html=docs/test_report.html --self-contained-html` |
 | Regenerate the HTML documentation | `pdoc --docformat numpy src/degradation -o docs` |
-| Reproduce the results | Open the notebooks in VS Code and click **Run All** (notebook 01, then 02) |
+| Reproduce the results | Open the notebooks in VS Code and click **Run All** (notebooks 01, 02, then 03) |
 
 All random choices use a fixed seed (`RANDOM_STATE = 42`), so results are reproducible.
 

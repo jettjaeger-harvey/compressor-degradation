@@ -117,3 +117,23 @@ def _save(fig, path):
     if path is not None:
         fig.savefig(path)
     return fig
+
+
+def plot_noise_robustness(noise, acceptance=0.0005, baseline=None, path=None):
+    """Test MAE against relative sensor noise (log-log), one line per model."""
+    t = noise[noise["noise_pct"] > 0]
+    fig, ax = plt.subplots(figsize=(5.6, 3.4))
+    for name, col in [("linear", "linear"), ("tree", "tree"), ("svr", "svr_tuned")]:
+        ax.plot(t["noise_pct"], t[col], marker="o", markersize=4, color=COLOURS[name],
+                label=LABELS[name])
+    ax.axhline(acceptance, color="#52514e", linestyle="--", linewidth=1)
+    ax.text(t["noise_pct"].min(), acceptance * 1.12, "acceptance limit (MAE 0.0005)",
+            fontsize=8, color="#52514e")
+    if baseline is not None:
+        ax.axhline(baseline, color=COLOURS["mean_baseline"], linestyle=":", linewidth=1.2)
+        ax.text(t["noise_pct"].min(), baseline * 1.1, "mean baseline", fontsize=8,
+                color="#52514e")
+    ax.set(xscale="log", yscale="log", xlabel="Sensor noise (% of reading, 1 standard deviation)",
+           ylabel="Test MAE", title="Accuracy when sensor readings are noisy")
+    ax.legend(frameon=False, loc="lower right")
+    return _save(fig, path)

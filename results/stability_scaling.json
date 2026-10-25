@@ -1,0 +1,25 @@
+{
+ "12 kept sensors": {
+  "cond_X": 841.8698773236356,
+  "cond_XtX": 708744.8903487024,
+  "max_coef_svd": 0.9750000000000011,
+  "max_coef_normal_eq": 0.9750000000000015,
+  "max_coef_difference": 5.628442156790925e-12,
+  "rmse_svd": 0.006619240617764507,
+  "rmse_normal_eq": 0.006619240617764514
+ },
+ "14 sensors incl. duplicates": {
+  "cond_X": 5.4550176250351256e+16,
+  "cond_XtX": 1.5985249028030886e+19,
+  "max_coef_svd": 0.9750000000000011,
+  "max_coef_normal_eq": NaN,
+  "max_coef_difference": NaN,
+  "rmse_svd": 0.0058316659881510365,
+  "rmse_normal_eq": NaN
+ },
+ "scaling_exponents": {
+  "linear": 0.08365786066752093,
+  "tree": 0.9906012263612395,
+  "svr": 1.0776925347018633
+ }
+}
